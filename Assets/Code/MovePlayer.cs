@@ -53,13 +53,13 @@ public class MovePlayer : MonoBehaviour
     void OnEnable()
     {
         controlPlayer.Enable();
-        controlPlayer.Player.saltar.performed += OnSaltar;
+        controlPlayer.Player.Saltar.performed += OnSaltar;
     }
 
     void OnDisable()
     {
         controlPlayer.Disable();
-        controlPlayer.Player.saltar.peformed -= OnSaltar;
+        controlPlayer.Player.Saltar.performed -= OnSaltar;
     }
 
     private void OnSaltar(InputAction.CallbackContext context)
@@ -67,7 +67,7 @@ public class MovePlayer : MonoBehaviour
         if(ColisionadorPlayer.enPiso)
         {
             rb.velocity = new Vector2(rb.velocity.x, 10f);
-            enPiso = false;
+            ColisionadorPlayer.enPiso = false;
         }
     }
 }
